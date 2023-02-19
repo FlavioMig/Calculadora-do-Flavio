@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculadora</title>
+    <style>
+        body{
+            background-color: rgb(81, 0, 255);
+            color:gold;
+            font:normal 30pt Arial;
+        }
+        h1{
+            color:dimgray;
+        }
+    </style>
+</head>
+<body>
+	<h1><center>Calculadora</center></h1>
+	
+	<label for="num1">Número 1:</label>
+	<input type="text" id="num1">
+	
+	<label for="num2">Número 2:</label>
+	<input type="text" id="num2">
+	
+	<br><br>
+	
+	<button onclick="somar()"><strong>Somar</button>
+	<button onclick="subtrair()"><strong>Subtrair</button>
+	<button onclick="multiplicar()"><strong>Multiplicar</button>
+	<button onclick="dividir()"><strong>Dividir</button>
+	<button onclick="porcentagem()"><strong>Porcentagem</button>
+	<button onclick="raiz()"><strong>Raiz Quadrada</button>
+	
+	<br><br>
+	
+	<label for="resultado">Resultado:</label>
+	<input type="text" id="resultado" readonly>
+	
+	<script>
+		// Função para obter os valores dos números da calculadora
+		function getValores() {
+			var num1 = Number(document.getElementById("num1").value);
+			var num2 = Number(document.getElementById("num2").value);
+			return [num1, num2];
+		}
+		
+		// Função para somar os números
+		function somar() {
+			var valores = getValores();
+			var resultado = valores[0] + valores[1];
+			document.getElementById("resultado").value = resultado;
+		}
+		
+		// Função para subtrair os números
+		function subtrair() {
+			var valores = getValores();
+			var resultado = valores[0] - valores[1];
+			document.getElementById("resultado").value = resultado;
+		}
+		
+		// Função para multiplicar os números
+		function multiplicar() {
+			var valores = getValores();
+			var resultado = valores[0] * valores[1];
+			document.getElementById("resultado").value = resultado;
+		}
+		
+		// Função para dividir os números
+		function dividir() {
+			var valores = getValores();
+			var resultado = valores[0] / valores[1];
+			document.getElementById("resultado").value = resultado;
+		}
+		
+		// Função para calcular a porcentagem
+		function porcentagem() {
+			var valores = getValores();
+			var resultado = (valores[0] * valores[1]) / 100;
+			document.getElementById("resultado").value = resultado;
+		}
+		
+		// Função para calcular a raiz quadrada
+		function raiz() {
+			var valores = getValores();
+			var resultado = Math.sqrt(valores[0]);
+			document.getElementById("resultado").value = resultado;
+		}
+	</script>
+</body>
+</html>
